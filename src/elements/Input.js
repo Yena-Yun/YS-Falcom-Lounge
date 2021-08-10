@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Grid } from "../elements";
 
 const Input = (props) => {
+  // input에는 placeholder와 _onChange를 추가로 props로 받아온다
   const { width, padding, border, bg, radius, type, placeholder, _onChange } = props;
 
   const styles = {

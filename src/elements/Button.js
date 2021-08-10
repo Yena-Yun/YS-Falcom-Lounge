@@ -24,8 +24,8 @@ const Button = (props) => {
 };
 
 // props로 받아온 값들에 모두 초기값을 지정할 필요는 없음
-// 	=> 여기서 margin과 padding은 초기값을 지정하지 않음
-// defaultProps를 지정하는 건 바뀔 여지가 있는 값들
+// (여기서 margin과 padding은 초기값을 지정하지 않음)
+// defaultProps를 지정하는 건 바뀔 여지가 있는 값들, 즉 props일 때만
 Button.defaultProps = {
   width: "5rem", // 80px
   height: "3rem", // 48px
@@ -42,10 +42,10 @@ const ElButton = styled.button`
   border-radius: ${(props) => props.radius};
   //padding은 반드시 있고
   padding: ${(props) => props.padding};
-  // margin은 있을 수도, 없을 수도 있음
+  // margin은 있을 수도 없을 수도 있음 (선택적임)
   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
 
-  // 변화 없이 항상 일정할 값들은 여기서 props 없이 지정
+  // 변화 없이 일정하게 + 반드시 반영할 값들은 props 없이 여기서만 지정
 	border: none;
   cursor: pointer;
 

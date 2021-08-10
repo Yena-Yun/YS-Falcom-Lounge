@@ -19,7 +19,7 @@ const Grid = (props) => {
 };
 
 Grid.defaultProps = {
-  // props로 들어올 수도 안 들어올 수도 있는 선택적인 값의 초기값은 false
+  // props로 들어올 수도 안 들어올 수도 있는 선택적인 값의 초기값은 false로 지정
   is_flex: false,
   direction: "column",
   justifyContent: "center",
