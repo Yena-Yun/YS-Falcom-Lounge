@@ -1,9 +1,10 @@
+import { findByDisplayValue } from "@testing-library/react";
 import React from "react";
 import styled from "styled-components";
 
 const Text = (props) => {
   // font-weight은 bold로 props 받아온 뒤 true/false로 지정
-  const { bold, color, size, margin, children } = props;
+  const { bold, color, size, margin, italic, children } = props;
 
   // props 요소들 중 모두 style 변수로 선언
   // 	-> 태그 내의 inline-style에 한 번에 설정하기 위함
@@ -13,6 +14,7 @@ const Text = (props) => {
     color: color,
     size: size,
     margin: margin,
+    italic: italic,
   };
 
   // 반환할 태그에 style을 spread 문법으로 넣어주고
@@ -29,6 +31,7 @@ Text.defaultProps = {
   color: "#2d3035",
   size: "1rem",
   margin: 0,
+  italic: false,
   children: null, // children도 초기값 필요 (태그 사이에 아무 내용이 없을 때 대비)
 };
 
@@ -39,6 +42,7 @@ const P = styled.p`
   font-size: ${(props) => props.size}px;
   font-weight: ${(props) => (props.bold ? "600" : "400")};
   margin: ${(props) => props.margin};
+  font-style: ${(props) => (props.italic ? "italic" : "none")};
 `;
 
 export default Text;

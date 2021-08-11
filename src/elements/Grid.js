@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Grid = (props) => {
-  const { is_flex, direction, justifyContent, alignItems, width, margin, padding, bg, children } = props;
+  const { row_flex, column_flex, header_flex, width, height, margin, padding, bg, children } = props;
 
   const styles = {
-    is_flex: is_flex,
-    direction: direction,
-    justifyContent: justifyContent,
-    alignItems: alignItems,
+    row_flex: row_flex,
+    column_flex: column_flex,
+    header_flex: header_flex,
     width: width,
+    height: height,
     margin: margin,
     padding: padding,
     bg: bg,
@@ -20,11 +20,11 @@ const Grid = (props) => {
 
 Grid.defaultProps = {
   // props로 들어올 수도 안 들어올 수도 있는 선택적인 값의 초기값은 false로 지정
-  is_flex: false,
-  direction: "column",
-  justifyContent: "center",
-  alignItems: "center",
+  row_flex: false,
+  column_flex: false,
+  header_flex: false,
   width: "100%",
+  height: "100vh",
   margin: false,
   padding: false,
   bg: false,
@@ -33,7 +33,7 @@ Grid.defaultProps = {
 
 const GridBox = styled.div`
   width: ${(props) => props.width};
-  height: 100%;
+  height: ${(props) => props.height};
   box-sizing: border-box;
   /* props로 들어오지 않을 수도 있는 선택적인 값들 처리하기
 		1) css 속성을 앞에 명시하지 않고 바로 props 문법으로 시작
@@ -43,10 +43,10 @@ const GridBox = styled.div`
   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
   ${(props) => (props.padding ? `padding: ${props.padding};` : "")}
 	${(props) => (props.bg ? `background-color: ${props.bg};` : "")}
-	${(props) =>
-    props.is_flex
-      ? `display: flex; flex-direction: ${props.direction}; justify-content: ${props.justifyContent}; align-items: ${props.alignItems};`
-      : ""}
+
+	${(props) => (props.row_flex ? `display: flex; justify-content: space-between; align-items: center;` : "")};
+  ${(props) => (props.column_flex ? `display: flex; flex-direction: column; justify-content: center; align-items: center;` : "")};
+  ${(props) => (props.header_flex ? `display: flex; justify-content: flex-start; align-items: center;` : "")}
 `;
 
 export default Grid;
