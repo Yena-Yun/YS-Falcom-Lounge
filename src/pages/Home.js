@@ -12,29 +12,30 @@ const Home = () => {
       <Header />
 
       <Grid flex column justifyCenter alignCenter>
-        <Image src={goddesses} size="400" shape="rectangle" />
-        <Text bold italic size="60px">
-          35-year Anniversary!
-        </Text>
+        <Grid flex column justifyCenter alignCenter>
+          <Image src={goddesses} size="600" shape="rectangle" />
+          <Text bold italic size="60px">
+            35-year Anniversary!
+          </Text>
 
-        <Grid flex justifyCenter>
-          <Button>
-            <Text color="#fff">이스 히스토리</Text>
-          </Button>
-          <Button>
-            <Text color="#fff">이스 공식 홈페이지</Text>
-          </Button>
+          <Grid flex justifyCenter margin="0 0 48px 0">
+            <Button>
+              <Text color="#fff">이스 공식 홈페이지</Text>
+            </Button>
+          </Grid>
         </Grid>
 
-        <Image src={adol_dana} size="400" shape="rectangle" />
-        <Text bold italic size="60px">
-          The Best Game Ever
-        </Text>
+        <Grid flex column justifyCenter alignCenter>
+          <Image src={adol_dana} size="600" shape="rectangle" />
+          <Text bold italic size="60px">
+            The Best Game Ever
+          </Text>
 
-        <Grid flex justifyCenter>
-          <Button>
-            <Text color="#fff">이스 8 소개</Text>
-          </Button>
+          <Grid flex justifyCenter margin="0 0 48px 0">
+            <Button>
+              <Text color="#fff">이스 8 소개</Text>
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
 
