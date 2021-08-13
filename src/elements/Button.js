@@ -29,7 +29,7 @@ Button.defaultProps = {
   height: "48px",
   bg: "black",
   // padding: "14px",
-  radius: "0.5rem",
+  radius: false,
   type: "submit",
   children: null,
 };
@@ -38,7 +38,7 @@ const ElButton = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   background-color: ${(props) => props.bg};
-  border-radius: ${(props) => props.radius};
+  ${(props) => (props.radius ? `border-radius: ${props.radius}` : "")};
   //padding은 반드시 있고
   /* padding: ${(props) => props.padding}; */
   // margin은 있을 수도 없을 수도 있음 (선택적임)
