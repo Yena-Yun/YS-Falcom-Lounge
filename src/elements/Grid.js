@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Grid = (props) => {
-  const { row_flex, column_flex, header_flex, width, height, margin, padding, bg, children } = props;
+  const { flex, column, justifyCenter, alignCenter, between, width, height, margin, padding, bg, children } = props;
 
   const styles = {
-    row_flex: row_flex,
-    column_flex: column_flex,
-    header_flex: header_flex,
+    flex: flex,
+    justifyCenter: justifyCenter,
+    alignCenter: alignCenter,
+    between: between,
+    column: column,
     width: width,
     height: height,
     margin: margin,
@@ -20,11 +22,12 @@ const Grid = (props) => {
 
 Grid.defaultProps = {
   // props로 들어올 수도 안 들어올 수도 있는 선택적인 값의 초기값은 false로 지정
-  row_flex: false,
-  column_flex: false,
-  header_flex: false,
+  flex: false,
+  column: false,
+  center: false,
+  between: false,
   width: "100%",
-  height: "100vh",
+  // height: "100vh",
   margin: false,
   padding: false,
   bg: false,
@@ -44,9 +47,11 @@ const GridBox = styled.div`
   ${(props) => (props.padding ? `padding: ${props.padding};` : "")}
 	${(props) => (props.bg ? `background-color: ${props.bg};` : "")}
 
-	${(props) => (props.row_flex ? `display: flex; justify-content: space-between; align-items: center;` : "")};
-  ${(props) => (props.column_flex ? `display: flex; flex-direction: column; justify-content: center; align-items: center;` : "")};
-  ${(props) => (props.header_flex ? `display: flex; justify-content: flex-start; align-items: center;` : "")}
+	${(props) => (props.flex ? `display: flex;` : "")};
+  ${(props) => (props.column ? `flex-direction: column;` : "")};
+  ${(props) => (props.justifyCenter ? `justify-content: center;` : "")};
+  ${(props) => (props.alignCenter ? `align-items: center;` : "")};
+  ${(props) => (props.between ? `justify-content: between;` : "")}
 `;
 
 export default Grid;

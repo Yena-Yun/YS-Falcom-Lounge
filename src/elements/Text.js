@@ -39,10 +39,10 @@ Text.defaultProps = {
 // (props로 인해 default값이 아닌 다른 스타일이 지정될 경우 실행)
 const P = styled.p`
   color: ${(props) => props.color};
-  font-size: ${(props) => props.size}px;
+  font-size: ${(props) => props.size};
   font-weight: ${(props) => (props.bold ? "600" : "400")};
   margin: ${(props) => props.margin};
-  font-style: ${(props) => (props.italic ? "italic" : "none")};
+  ${(props) => (props.italic ? `font-style: italic;` : "")};
 `;
 
 export default Text;

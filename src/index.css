@@ -5,9 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  background: url('./image/etc/wall-paper.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 170vh;
 }
