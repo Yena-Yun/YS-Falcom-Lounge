@@ -12,7 +12,7 @@ const Home = () => {
       <Grid flex margin="0 auto 48px">
         <Image src={goddesses} size="500" shape="rectangle" />
         <Grid flex column align="left" margin="0 0 0 40px">
-          <Text bold italic size="60px" margin="0 0 24px 0">
+          <Text bold italic size="60px" margin="0 0 60px 0">
             35-year Anniversary!
           </Text>
           <Button>
@@ -24,14 +24,14 @@ const Home = () => {
       </Grid>
 
       <Grid flex margin="40px 0 0 0">
-        <Grid flex column justify="center" align="center" margin="0 30px 0 0">
+        <Grid flex column justify="center" align="center" margin="0 70px 0 0">
           <Image src={lacrimosa} size="450" shape="rectangle" />
           <Text bold italic size="60px" margin="12px 0 16px 0">
             The Best Series Ever
           </Text>
         </Grid>
         <Grid flex column justify="center" align="center">
-          <Image src={monstrum} size="490" shape="rectangle" />
+          <Image src={monstrum} size="485" shape="rectangle" />
           <Text bold italic size="60px" margin="12px 0 16px 0">
             The Most Recent Series
           </Text>
