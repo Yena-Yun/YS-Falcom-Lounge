@@ -1,45 +1,42 @@
+/* eslint-disable */
 import React from "react";
-import styled from "styled-components";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { Grid, Text, Button, Input, Image } from "../elements";
 import goddesses from "../image/etc/ys-goddesses.jpg";
-import adol_dana from "../image/etc/ys8-adol-dana.jpg";
+import lacrimosa from "../image/ys8/ys8-adol-dana.jpg";
+import monstrum from "../image/ys9/ys9_characters.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <Grid>
-      <Header />
-
-      <Grid flex column justifyCenter alignCenter>
-        <Grid flex column justifyCenter alignCenter>
-          <Image src={goddesses} size="600" shape="rectangle" />
-          <Text bold italic size="60px">
+    <Grid flex column justify="center" align="center" margin="60px auto 48px">
+      <Grid flex margin="0 auto 48px">
+        <Image src={goddesses} size="500" shape="rectangle" />
+        <Grid flex column align="left" margin="0 0 0 40px">
+          <Text bold italic size="60px" margin="0 0 24px 0">
             35-year Anniversary!
           </Text>
-
-          <Grid flex justifyCenter margin="0 0 48px 0">
-            <Button>
+          <Button>
+            <a href="https://play-ys.com/" target="_blank">
               <Text color="#fff">이스 공식 홈페이지</Text>
-            </Button>
-          </Grid>
-        </Grid>
-
-        <Grid flex column justifyCenter alignCenter>
-          <Image src={adol_dana} size="600" shape="rectangle" />
-          <Text bold italic size="60px">
-            The Best Game Ever
-          </Text>
-
-          <Grid flex justifyCenter margin="0 0 48px 0">
-            <Button>
-              <Text color="#fff">이스 8 소개</Text>
-            </Button>
-          </Grid>
+            </a>
+          </Button>
         </Grid>
       </Grid>
 
-      <Footer />
+      <Grid flex margin="40px 0 0 0">
+        <Grid flex column justify="center" align="center" margin="0 30px 0 0">
+          <Image src={lacrimosa} size="450" shape="rectangle" />
+          <Text bold italic size="60px" margin="12px 0 16px 0">
+            The Best Series Ever
+          </Text>
+        </Grid>
+        <Grid flex column justify="center" align="center">
+          <Image src={monstrum} size="490" shape="rectangle" />
+          <Text bold italic size="60px" margin="12px 0 16px 0">
+            The Most Recent Series
+          </Text>
+        </Grid>
+      </Grid>
     </Grid>
   );
 };

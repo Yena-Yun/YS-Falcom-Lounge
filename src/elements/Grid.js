@@ -2,14 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Grid = (props) => {
-  const { flex, column, justifyCenter, alignCenter, between, width, height, margin, padding, bg, children } = props;
+  const { flex, column, justify, align, width, height, margin, padding, bg, children } = props;
 
   const styles = {
     flex: flex,
-    justifyCenter: justifyCenter,
-    alignCenter: alignCenter,
-    between: between,
     column: column,
+    justify: justify,
+    align: align,
     width: width,
     height: height,
     margin: margin,
@@ -24,9 +23,9 @@ Grid.defaultProps = {
   // props로 들어올 수도 안 들어올 수도 있는 선택적인 값의 초기값은 false로 지정
   flex: false,
   column: false,
-  center: false,
-  between: false,
-  width: "100%",
+  justify: false,
+  align: false,
+  width: false,
   // height: "100vh",
   margin: false,
   padding: false,
@@ -35,8 +34,8 @@ Grid.defaultProps = {
 };
 
 const GridBox = styled.div`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  ${(props) => (props.width ? `width: ${props.width};` : "")};
+  ${(props) => (props.height ? `height: ${props.height};` : "")};
   box-sizing: border-box;
   /* props로 들어오지 않을 수도 있는 선택적인 값들 처리하기
 		1) css 속성을 앞에 명시하지 않고 바로 props 문법으로 시작
@@ -49,9 +48,8 @@ const GridBox = styled.div`
 
 	${(props) => (props.flex ? `display: flex;` : "")};
   ${(props) => (props.column ? `flex-direction: column;` : "")};
-  ${(props) => (props.justifyCenter ? `justify-content: center;` : "")};
-  ${(props) => (props.alignCenter ? `align-items: center;` : "")};
-  ${(props) => (props.between ? `justify-content: between;` : "")}
+  ${(props) => (props.justify ? `justify-content: ${props.justify};` : "")};
+  ${(props) => (props.align ? `align-items: ${props.align};` : "")};
 `;
 
 export default Grid;
