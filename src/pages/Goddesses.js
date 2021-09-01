@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Grid } from "../elements";
+import { Grid, Text } from "../elements";
 
 const Goddesses = (props) => {
-  return <Grid></Grid>;
+  return (
+    <Grid>
+      <Text>Who are the two goddesses?</Text>
+    </Grid>
+  );
 };
-
-const GoddessesBlock = styled.div``;
 
 export default Goddesses;

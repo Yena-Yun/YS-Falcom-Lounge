@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Loading = (props) => {
   return (
@@ -11,12 +11,6 @@ const Loading = (props) => {
 };
 
 const Wrapper = styled.div`
-  /* body {
-    margin: 0;
-    padding: 0;
-    background: #262626;
-  } */
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,7 +31,7 @@ const Wrapper = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: -3px;
     left: -3px;
@@ -63,7 +57,7 @@ const Ring = styled.span`
   animation: animate 2s linear infinite;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 16px;
     height: 16px;

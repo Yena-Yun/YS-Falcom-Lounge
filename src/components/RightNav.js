@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const RightNav = ({ open }) => {
   return (
@@ -28,12 +28,12 @@ const Ul = styled.ul`
   }
 
   /* 'screen and' 생략 가능 */
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-flow: column nowrap;
     background-color: #0d2538; // 약간 밝은 남색 배경
 
     /* 전달받은 open의 state에 따라 메뉴바 보였다 안 보였다 하기 (슬라이드 기능) */
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
 
     // 화면의 특정 위치에 고정 (화면의 위치: top, right으로 지정)
     position: fixed;

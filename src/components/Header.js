@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import ys_logo from "../image/header/ys_header_logo.png";
-import { Grid, Text, Button } from "../elements";
-import { Link } from "react-router-dom";
-import Burger from "./Burger";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import ys_logo from '../image/header/ys_header_logo.png';
+import { Grid, Text } from '../elements';
+import { Link } from 'react-router-dom';
+import Burger from './Burger';
 
 const Header = (props) => {
   return (
