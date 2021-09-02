@@ -15,7 +15,7 @@ const Header = (props) => {
               <LogoImage src={ys_logo} />
             </Link>
             <Link to="/">
-              <Text bold italic size="35px" color="#fff" margin="0 0 0 1.5rem">
+              <Text bold italic size="35px" color="#fff" margin="0 0 0 1.2rem">
                 Welcome to YS Lounge
               </Text>
             </Link>
@@ -46,7 +46,7 @@ const Nav = styled.nav`
 
 const LogoImage = styled.img`
   display: block;
-  width: 150px;
+  width: 120px;
   border: none;
   cursor: pointer;
 `;

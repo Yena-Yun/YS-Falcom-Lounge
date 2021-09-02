@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import TagBox from '../../components/write/TagBox';
-import WriteActionButtons from '../../components/write/WriteActionButtons';
+import TagBoxContainer from '../../containers/write/TagBoxContainer';
 import EditorContainer from '../../containers/write/EditorContainer';
+import WriteActionButtonsContainer from '../../containers/WriteActionButtonsContainer';
 
 const Board8 = () => {
   return (
     <Wrapper>
       <EditorContainer />
-      <TagBox />
-      <WriteActionButtons />
+      <TagBoxContainer />
+      <WriteActionButtonsContainer />
     </Wrapper>
   );
 };
