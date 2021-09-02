@@ -34,7 +34,7 @@ const Home = () => {
         <Grid flex column justify="center" align="center" mr="70px">
           <div
             onClick={() => {
-              history.push('/board8');
+              history.push('/boardlist8');
             }}
           >
             <Image src={lacrimosa} size="450" shape="rectangle" />
@@ -42,6 +42,13 @@ const Home = () => {
           <Text bold italic size="42px" margin="12px 0 16px 0">
             Lacrimosa of Dana
           </Text>
+          <Button
+            onClick={() => {
+              history.push('/board8');
+            }}
+          >
+            이스 8 게시판 글쓰기
+          </Button>
         </Grid>
         <Grid flex column justify="center" align="center">
           <Image src={monstrum} size="485" shape="rectangle" />
