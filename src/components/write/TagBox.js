@@ -66,12 +66,13 @@ const TagBox = (props) => {
 };
 
 const TagBoxBlock = styled.div`
-  width: 100%;
-  padding-top: 2rem;
-  margin-left: 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4rem;
 
   h4 {
     color: ${palette.gray[8]};
+    /* h4 헤딩태그 자체의 마진 제거 */
     margin-top: 0;
     margin-bottom: 0.5rem;
   }

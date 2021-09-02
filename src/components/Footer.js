@@ -18,7 +18,7 @@ const FooterBlock = styled.div`
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 1.8rem;
+  padding: 2rem;
   font-size: 20px;
   font-weight: 600;
 `;

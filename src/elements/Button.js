@@ -12,6 +12,8 @@ const Button = (props) => {
     ml,
     mr,
     bg,
+    padding,
+    paddingHover,
     bgHover,
     red,
     indigo,
@@ -20,6 +22,7 @@ const Button = (props) => {
     children,
     type,
     radius,
+    _onClick,
   } = props;
 
   const styles = {
@@ -30,6 +33,8 @@ const Button = (props) => {
     mb: mb,
     ml: ml,
     mr: mr,
+    padding: padding,
+    paddingHover: paddingHover,
     bg: bg,
     bgHover: bgHover,
     red: red,
@@ -40,7 +45,7 @@ const Button = (props) => {
   };
 
   return (
-    <ElButton {...styles} type={type}>
+    <ElButton {...styles} type={type} onClick={_onClick}>
       {children}
     </ElButton>
   );
@@ -50,20 +55,23 @@ const Button = (props) => {
 // (여기서 margin과 padding은 초기값을 지정하지 않음)
 // defaultProps를 지정하는 건 바뀔 여지가 있는 값들, 즉 props일 때만
 Button.defaultProps = {
-  width: '200px',
-  height: '48px',
   bg: '#212529',
   bgHover: '#343a40',
+  padding: '8px 18px',
+  paddingHover: '9px 19px',
   color: '#fff',
-  radius: false,
+  radius: '4px',
   size: '1rem',
   type: 'submit',
   children: null,
+  _onClick: () => {},
 };
 
 const ElButton = styled.button`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  ${(props) => (props.width ? `width: ${props.width}` : '')};
+  ${(props) => (props.height ? `height: ${props.height}` : '')};
+  /* ${(props) => (props.padding ? `padding: ${props.padding}` : '')}; */
+  padding: ${(props) => props.padding};
   background: ${(props) => props.bg};
   font-size: ${(props) => props.size};
   ${(props) => (props.radius ? `border-radius: ${props.radius}` : '')};
@@ -78,15 +86,9 @@ const ElButton = styled.button`
 	border: none;
   cursor: pointer;
 
-  /* &:active {
-    border: none;
-    outline: none;
-  } */
-
   &:hover {
-    width: calc(${(props) => props.width} * 1.115);
-    height: calc(${(props) => props.height} * 1.115);
     background: ${(props) => props.bgHover};
+    padding: ${(props) => props.paddingHover};
   }
 
   ${(props) =>
